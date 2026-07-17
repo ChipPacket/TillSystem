@@ -9,7 +9,7 @@ import java.awt.event.*;
 import javax.swing.*;
 public class Main {
 
-    int quantity = 0;
+    double orderTotal = 0;
    
     public void runGUI(){
 
@@ -23,12 +23,15 @@ public class Main {
 
         // set price of ice cream
         double price = 1.51;
+        double slushprice = 2;
 
         // create button with labels
         JButton btn = new JButton("Ice Cream: £1.51");
+        JButton btn2 = new JButton("Slushie: £2.00");
         JLabel label1 = new JLabel("Current Total: £");
         JLabel label2 = new JLabel("0.00");
         topPanel.add(btn); // dont forget to add items to the panel
+        topPanel.add(btn2);
         topPanel.add(label1);
         topPanel.add(label2);
         
@@ -51,43 +54,22 @@ public class Main {
             public void actionPerformed(ActionEvent e){  
                 // change text of text area
                 orderList.append("Ice Cream + £1.51\n");
-                quantity++;
-                double currentTotal = price*quantity;
-                String value = String.valueOf(currentTotal);
+                orderTotal = orderTotal+price;
+                String value = String.valueOf(orderTotal);
                 label2.setText(value);
             }  
         });
-        
 
-        /*
-        // text area 
-        JScrollPane scrollPane = new JScrollPane(orderList);
-        orderList.setEditable(false);
-        scrollPane.setVerticalScrollBarPolicy(
-                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-                scrollPane.setPreferredSize(new Dimension(250, 250)
-            );
-        frame.add(orderList);
-        */
-
-        //make button
-        /**
-         * 
-         
-        JButton button = new JButton("Strawberry Ice Cream");
-        button.setBounds(500, 10, 200, 50);
-
-        button.addActionListener(new ActionListener(){ 
+        // add a listener to the button
+        btn2.addActionListener(new ActionListener(){ 
             public void actionPerformed(ActionEvent e){  
-                // change text of text area (see below) 
-                orderList.append("*Button Clicked!*\n");
+                // change text of text area
+                orderList.append("Slushie + £2.00\n");
+                orderTotal = orderTotal+slushprice;
+                String value = String.valueOf(orderTotal);
+                label2.setText(value);
             }  
         });
-
-        //add everything to frame
-        frame.add(button); // DONT FORGET FRAME.ADD YOU DUMBASS
-
-        */
 
         // make frame visible
         frame.setVisible(true);

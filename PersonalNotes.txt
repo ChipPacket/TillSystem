@@ -1,0 +1,20 @@
+Aim: To make a till system with an interactive Swing or other system UI in Java, using the Stephens till as a reference / starting point. Have the stock be easily editable without having to edit the code directly. 
+
+Goal for today: Create a prototype where an item and its price are added to an order total upon clicking a button. Outline next working point. Find inspiration for what kind of business my system will be for as a 'base'
+
+NOTES:
+- Make a class for the JFrame, don't keep it in the main class. "public class MyFrame extends JFrame"
+- Look into GridLayout 
+
+
+13/07/26 Notes
+- JScrollPane allows text area to scroll - will be useful for orders, so implement the text area as a scroll pane
+- Cannot update variables defined outside of an action listener. Example: quantity defined outside of action listener cannot be updated upon button click
+- code is currently reliant on panels and border layout. final code will probably use grid layout? or a mix of the two? like panels with grids on it?
+
+- Prototype working, orderlist can also scroll
+- Next: 
+	- add another button with a new item with a different price
+	- turn products into Product object - make an array of objects? Or maybe a different data type would work better to store the list of items. Revise this and research - array of objects most likely easiest option
+
+
