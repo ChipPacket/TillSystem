@@ -1,0 +1,5 @@
+Ice Cream, 1.51
+Slushie, 2
+Frozen Yogurt, 3.10
+Ice Cream Sandwich, 5.99
+Frozen Blueberry, 0.51
