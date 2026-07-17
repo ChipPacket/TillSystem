@@ -11,7 +11,7 @@ public class Main {
 
     double orderTotal = 0;
    
-    public void runGUI(){
+    public void runGUI(Product products[]){
 
         // create frame
         JFrame frame = new JFrame("Till System!");
@@ -20,10 +20,6 @@ public class Main {
 
         // create top panel for items to go on, items will be left aligned
         JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
-        // set price of ice cream
-        double price = 1.51;
-        double slushprice = 2;
 
         // create button with labels
         JButton btn = new JButton("Ice Cream: £1.51");
@@ -54,7 +50,7 @@ public class Main {
             public void actionPerformed(ActionEvent e){  
                 // change text of text area
                 orderList.append("Ice Cream + £1.51\n");
-                orderTotal = orderTotal+price;
+                orderTotal = orderTotal+(products[0].getPrice());
                 String value = String.valueOf(orderTotal);
                 label2.setText(value);
             }  
@@ -65,7 +61,7 @@ public class Main {
             public void actionPerformed(ActionEvent e){  
                 // change text of text area
                 orderList.append("Slushie + £2.00\n");
-                orderTotal = orderTotal+slushprice;
+                orderTotal = orderTotal+(products[1].getPrice());
                 String value = String.valueOf(orderTotal);
                 label2.setText(value);
             }  
@@ -77,14 +73,13 @@ public class Main {
     }
 
     public static void main(String[] args){
-        Main main = new Main();
-        main.runGUI();
+        //initialise array of objects 'Product'
+        Product products[] = new Product[2];
+        products[0] = new Product("Ice Cream", 1.51);
+        products[1] = new Product("Slushie", 2);
         
-        //swag
-        Product item = new Product();
-
-        // create product
-        item.setName("Strawberry Ice Cream");
-        item.setPrice(2.99);
+        // run UI
+        Main main = new Main();
+        main.runGUI(products);
     }
 }

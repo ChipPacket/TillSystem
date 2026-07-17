@@ -9,6 +9,11 @@ public class Product {
         price = 0.0;
     }
 
+    public Product (String itemName, double itemPrice){
+        name = itemName;
+        price = itemPrice;
+    }
+
     // ### GET / SETS
     public String getName(){
         return name;
