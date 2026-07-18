@@ -31,7 +31,7 @@ public class Employee {
         return isManager;
     }
 
-    public HashSet getOrder(){
+    public HashSet<Product> getOrder(){
         return order;
     }
 

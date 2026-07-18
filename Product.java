@@ -1,15 +1,18 @@
 public class Product {
     
+    private double productID;
     private String name;
     private double price;
 
     // initalise variables for product
     public Product(){
+        productID = 0.0;
         name = "";
         price = 0.0;
     }
 
-    public Product (String itemName, double itemPrice){
+    public Product (double newID, String itemName, double itemPrice){
+        productID = newID;
         name = itemName;
         price = itemPrice;
     }
@@ -29,5 +32,13 @@ public class Product {
 
     public void setPrice(double newPrice){
         price = newPrice;
+    }
+
+    public double getID(){
+        return productID;
+    }
+
+    public void setID(double newID){
+        productID = newID;
     }
 }
