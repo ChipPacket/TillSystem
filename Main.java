@@ -7,10 +7,16 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.HashSet;
 public class Main {
 
+    public HashSet getProductDataFromFile(){
+        HashSet<Product> productList = new HashSet<Product>();
+
+        return productList;
+    }
+
     double orderTotal = 0;
-   
     public void runGUI(Product products[]){
 
         // create frame
